@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		180A83E229B78D7100FAE4B1 /* UserTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 180A83E129B78D7100FAE4B1 /* UserTableViewCell.swift */; };
 		180FB07129B5A84400A8D39D /* FeedPostTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 180FB07029B5A84400A8D39D /* FeedPostTableViewCell.swift */; };
 		180FB07329B5AC2700A8D39D /* IGFeedPostHeaderTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 180FB07229B5AC2700A8D39D /* IGFeedPostHeaderTableViewCell.swift */; };
 		180FB07529B5AC4600A8D39D /* IGFeedPostActionTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 180FB07429B5AC4600A8D39D /* IGFeedPostActionTableViewCell.swift */; };
@@ -15,6 +16,9 @@
 		180FB07B29B61CBA00A8D39D /* PhtotoCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 180FB07A29B61CBA00A8D39D /* PhtotoCollectionViewCell.swift */; };
 		180FB07D29B61DDD00A8D39D /* ProfilePhotoCollectionReusableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 180FB07C29B61DDD00A8D39D /* ProfilePhotoCollectionReusableView.swift */; };
 		180FB07F29B61E4600A8D39D /* ProfileTabCollectionReusableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 180FB07E29B61E4600A8D39D /* ProfileTabCollectionReusableView.swift */; };
+		180FB08229B719D300A8D39D /* SDWebImage in Frameworks */ = {isa = PBXBuildFile; productRef = 180FB08129B719D300A8D39D /* SDWebImage */; };
+		180FB08429B7292500A8D39D /* Models.swift in Sources */ = {isa = PBXBuildFile; fileRef = 180FB08329B7292500A8D39D /* Models.swift */; };
+		180FB08829B73E6F00A8D39D /* PostViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 180FB08729B73E6F00A8D39D /* PostViewController.swift */; };
 		181D7A2B29A7BB8A0056D511 /* AuthManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 181D7A2A29A7BB8A0056D511 /* AuthManager.swift */; };
 		181D7A2D29A7C6AC0056D511 /* DataBaseManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 181D7A2C29A7C6AC0056D511 /* DataBaseManager.swift */; };
 		181D7A2F29A7C6DE0056D511 /* StorageManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 181D7A2E29A7C6DE0056D511 /* StorageManager.swift */; };
@@ -49,6 +53,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		180A83E129B78D7100FAE4B1 /* UserTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserTableViewCell.swift; sourceTree = "<group>"; };
 		180FB07029B5A84400A8D39D /* FeedPostTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedPostTableViewCell.swift; sourceTree = "<group>"; };
 		180FB07229B5AC2700A8D39D /* IGFeedPostHeaderTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IGFeedPostHeaderTableViewCell.swift; sourceTree = "<group>"; };
 		180FB07429B5AC4600A8D39D /* IGFeedPostActionTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IGFeedPostActionTableViewCell.swift; sourceTree = "<group>"; };
@@ -57,6 +62,8 @@
 		180FB07A29B61CBA00A8D39D /* PhtotoCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhtotoCollectionViewCell.swift; sourceTree = "<group>"; };
 		180FB07C29B61DDD00A8D39D /* ProfilePhotoCollectionReusableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfilePhotoCollectionReusableView.swift; sourceTree = "<group>"; };
 		180FB07E29B61E4600A8D39D /* ProfileTabCollectionReusableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileTabCollectionReusableView.swift; sourceTree = "<group>"; };
+		180FB08329B7292500A8D39D /* Models.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Models.swift; sourceTree = "<group>"; };
+		180FB08729B73E6F00A8D39D /* PostViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostViewController.swift; sourceTree = "<group>"; };
 		181D7A2A29A7BB8A0056D511 /* AuthManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthManager.swift; sourceTree = "<group>"; };
 		181D7A2C29A7C6AC0056D511 /* DataBaseManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataBaseManager.swift; sourceTree = "<group>"; };
 		181D7A2E29A7C6DE0056D511 /* StorageManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StorageManager.swift; sourceTree = "<group>"; };
@@ -92,6 +99,7 @@
 				187E81A629B0FEEB009DEBD2 /* FirebaseFirestore in Frameworks */,
 				187E81AC29B0FEEB009DEBD2 /* FirebaseMessaging in Frameworks */,
 				187E81A029B0FEEB009DEBD2 /* FirebaseAnalytics in Frameworks */,
+				180FB08229B719D300A8D39D /* SDWebImage in Frameworks */,
 				187E81A829B0FEEB009DEBD2 /* FirebaseFirestoreCombine-Community in Frameworks */,
 				187E81AE29B0FEEB009DEBD2 /* FirebaseStorage in Frameworks */,
 				187E81A229B0FEEB009DEBD2 /* FirebaseAuth in Frameworks */,
@@ -150,6 +158,7 @@
 				180FB07A29B61CBA00A8D39D /* PhtotoCollectionViewCell.swift */,
 				180FB07C29B61DDD00A8D39D /* ProfilePhotoCollectionReusableView.swift */,
 				180FB07E29B61E4600A8D39D /* ProfileTabCollectionReusableView.swift */,
+				180A83E129B78D7100FAE4B1 /* UserTableViewCell.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -157,6 +166,7 @@
 		18F7F6CB29A74C4F00D283EB /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				180FB08329B7292500A8D39D /* Models.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -216,6 +226,7 @@
 				18F7F6E229A7516200D283EB /* SettingsViewController.swift */,
 				18F7F6E429A7517000D283EB /* ListViewController.swift */,
 				18F7F6E629A7518F00D283EB /* RelatedsearchViewController.swift */,
+				180FB08729B73E6F00A8D39D /* PostViewController.swift */,
 				18F7F6E829A7535300D283EB /* PublishViewController.swift */,
 			);
 			path = other;
@@ -247,6 +258,7 @@
 				187E81AB29B0FEEB009DEBD2 /* FirebaseMessaging */,
 				187E81AD29B0FEEB009DEBD2 /* FirebaseStorage */,
 				187E81AF29B0FEEB009DEBD2 /* FirebaseStorageCombine-Community */,
+				180FB08129B719D300A8D39D /* SDWebImage */,
 			);
 			productName = InstagramUikit;
 			productReference = 18F7F6B329A74C2900D283EB /* InstagramUikit.app */;
@@ -278,6 +290,7 @@
 			mainGroup = 18F7F6AA29A74C2900D283EB;
 			packageReferences = (
 				187E819E29B0FEEB009DEBD2 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
+				180FB08029B719D200A8D39D /* XCRemoteSwiftPackageReference "SDWebImage" */,
 			);
 			productRefGroup = 18F7F6B429A74C2900D283EB /* Products */;
 			projectDirPath = "";
@@ -323,14 +336,17 @@
 				187E81B229B19480009DEBD2 /* Extension.swift in Sources */,
 				180FB07929B5FFE500A8D39D /* FormTableViewCell.swift in Sources */,
 				18F7F6D129A74D6A00D283EB /* HomeViewController.swift in Sources */,
+				180FB08829B73E6F00A8D39D /* PostViewController.swift in Sources */,
 				181D7A2B29A7BB8A0056D511 /* AuthManager.swift in Sources */,
 				18F7F6E729A7518F00D283EB /* RelatedsearchViewController.swift in Sources */,
 				18F7F6D929A74F3D00D283EB /* ProfileViewController.swift in Sources */,
+				180A83E229B78D7100FAE4B1 /* UserTableViewCell.swift in Sources */,
 				18F7F6DF29A74FD100D283EB /* LoginViewController.swift in Sources */,
 				18F7F6D529A74EF100D283EB /* PostCameraViewController.swift in Sources */,
 				18F7F6E529A7517000D283EB /* ListViewController.swift in Sources */,
 				180FB07529B5AC4600A8D39D /* IGFeedPostActionTableViewCell.swift in Sources */,
 				180FB07129B5A84400A8D39D /* FeedPostTableViewCell.swift in Sources */,
+				180FB08429B7292500A8D39D /* Models.swift in Sources */,
 				180FB07B29B61CBA00A8D39D /* PhtotoCollectionViewCell.swift in Sources */,
 				18F7F6E329A7516200D283EB /* SettingsViewController.swift in Sources */,
 			);
@@ -552,6 +568,14 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
+		180FB08029B719D200A8D39D /* XCRemoteSwiftPackageReference "SDWebImage" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/SDWebImage/SDWebImage.git";
+			requirement = {
+				branch = master;
+				kind = branch;
+			};
+		};
 		187E819E29B0FEEB009DEBD2 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/firebase/firebase-ios-sdk";
@@ -563,6 +587,11 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
+		180FB08129B719D300A8D39D /* SDWebImage */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 180FB08029B719D200A8D39D /* XCRemoteSwiftPackageReference "SDWebImage" */;
+			productName = SDWebImage;
+		};
 		187E819F29B0FEEB009DEBD2 /* FirebaseAnalytics */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = 187E819E29B0FEEB009DEBD2 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;

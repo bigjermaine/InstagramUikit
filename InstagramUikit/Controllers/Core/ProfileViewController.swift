@@ -10,7 +10,7 @@ import UIKit
 class ProfileViewController: UIViewController {
   
     private var collectionView:UICollectionView?
-    
+    private var userPosts = [PostModel]()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -22,23 +22,25 @@ class ProfileViewController: UIViewController {
         layout.minimumLineSpacing = 1
         layout.minimumInteritemSpacing = 1
         
-        layout.sectionInset = UIEdgeInsets(top: 0, left: 1, bottom: 0, right: 1)
+        layout.sectionInset = UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0)
         let  size = (view.width - 4)/3
-        layout.itemSize = CGSize(width:  size , height:   size)
+        layout.itemSize = CGSize(width:  size , height:   size )
         collectionView = UICollectionView(frame: .zero, collectionViewLayout: layout)
         collectionView?.dataSource = self
         collectionView?.delegate = self
         
         
-        
-        collectionView?.register(PhtotoCollectionViewCell.self, forCellWithReuseIdentifier: PhtotoCollectionViewCell.identifier  )
-        
-        
         collectionView?.register(ProfileInfoPhotoCollectionReusableView.self, forSupplementaryViewOfKind: UICollectionView.elementKindSectionHeader, withReuseIdentifier: ProfileInfoPhotoCollectionReusableView.identifier)
         
         collectionView?.register(ProfileTabCollectionReusableView.self, forSupplementaryViewOfKind: UICollectionView.elementKindSectionHeader, withReuseIdentifier: ProfileTabCollectionReusableView.identifier)
-        guard let collectionView = collectionView else {return}
-        view.addSubview(collectionView)
+        
+        
+        collectionView?.register(PhtotoCollectionViewCell.self, forCellWithReuseIdentifier: PhtotoCollectionViewCell.identifier  )
+        
+      
+        
+          guard let collectionView = collectionView else {return}
+          view.addSubview(collectionView)
     }
     
     
@@ -58,16 +60,92 @@ class ProfileViewController: UIViewController {
     }
 }
 
-extension ProfileViewController:UICollectionViewDelegate,UICollectionViewDataSource {
+extension  ProfileViewController:UICollectionViewDelegate,UICollectionViewDataSource,UICollectionViewDelegateFlowLayout,ProfileInfoPhotoCollectionReusableViewDelegate,ProfileTabCollectionReusableViewDelegate{
+    func didTapGridButtonTab() {
+        //
+    }
+    
+    func didTaggedButtonTab() {
+        //
+    }
+    
+    func profileHeaderDidTapPostButton(_ header: ProfileInfoPhotoCollectionReusableView) {
+        collectionView?.scrollToItem(at: IndexPath(row:0, section: 1), at: .top, animated: true)
+    }
+    
+    func profileFollowersDidTapPostButton(_ header: ProfileInfoPhotoCollectionReusableView) {
+        let vc = ListViewController(data: ["joe","jone"])
+        vc.title = "Follwers"
+        vc.navigationItem.largeTitleDisplayMode = .never
+        navigationController?.pushViewController(vc, animated: true)
+    }
+    
+    func profileFollowingDidTapPostButton(_ header: ProfileInfoPhotoCollectionReusableView) {
+        let vc = ListViewController(data:  ["joe","jone"])
+        vc.title = "Follwing"
+        vc.navigationItem.largeTitleDisplayMode = .never
+        navigationController?.pushViewController(vc, animated: true)
+    }
+    
+    func profileEditTapPostButton(_ header: ProfileInfoPhotoCollectionReusableView) {
+        let vc = EdityProfileViewController()
+        vc.title = "Follwing"
+        vc.navigationItem.largeTitleDisplayMode = .never
+        navigationController?.pushViewController(vc, animated: true)
+    }
+    
+    
+    func numberOfSections(in collectionView: UICollectionView) -> Int {
+        return 2
+    }
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 10
+        
+        if section == 0 {
+           return 0
+        }
+        
+        return 30
     }
 
 
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        
+     //   let model = userposts[indexPath.row]
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: PhtotoCollectionViewCell.identifier, for: indexPath) as! PhtotoCollectionViewCell
-        cell.backgroundColor = .red
+       // cell.configure(withmodel: <#T##PostModel#>)
+        cell.configure(debug: "mouse")
         return cell
     }
-
+    func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView {
+        guard kind == UICollectionView.elementKindSectionHeader else {return
+           UICollectionReusableView()
+        }
+        
+        if indexPath.section == 1 {
+          
+            let profileHeader = collectionView.dequeueReusableSupplementaryView(ofKind:  kind, withReuseIdentifier: ProfileTabCollectionReusableView.identifier, for: indexPath) as! ProfileTabCollectionReusableView
+               profileHeader.delegate = self 
+            return profileHeader
+        }
+        let header = collectionView.dequeueReusableSupplementaryView(ofKind:  kind, withReuseIdentifier: ProfileInfoPhotoCollectionReusableView.identifier, for: indexPath) as! ProfileInfoPhotoCollectionReusableView
+        header.delegate = self
+        return header
+        
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, referenceSizeForHeaderInSection section: Int) -> CGSize {
+        if section == 0 {
+            return CGSize(width: collectionView.width, height:collectionView.height/3)
+        }
+      
+         return CGSize(width: collectionView.width, height:50)
+    }
+    func collectionView(_ collectionView: UICollectionView, didDeselectItemAt indexPath: IndexPath) {
+        collectionView.deselectItem(at: indexPath, animated: true)
+//        let vc =  PostViewController(model: nil)
+//        vc.navigationItem.largeTitleDisplayMode = .never
+//        navigationController?.pushViewController(vc, animated: true)
+    }
+    
+    
 }

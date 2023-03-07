@@ -7,6 +7,7 @@
 
 import UIKit
 protocol FormTableViewCellDelegate:AnyObject {
+    
     func formTableViewCell(_ cell:FormTableViewCell,didupdated value: EditProfileForModel)
 }
 class FormTableViewCell: UITableViewCell,UITextFieldDelegate {
