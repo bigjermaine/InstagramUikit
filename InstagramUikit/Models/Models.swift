@@ -18,13 +18,14 @@ enum Gender {
     case female
     
 }
-public struct users {
+ struct users {
     let username:String
     let name: (first:String, last:String)
     let birthdate:Date
     let gender: Gender
     let counts:userCount
     let joinDate:Date
+    let profilepicture:URL
     
 }
 
