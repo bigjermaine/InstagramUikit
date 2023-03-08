@@ -74,15 +74,24 @@ extension  ProfileViewController:UICollectionViewDelegate,UICollectionViewDataSo
     }
     
     func profileFollowersDidTapPostButton(_ header: ProfileInfoPhotoCollectionReusableView) {
-        let vc = ListViewController(data: ["joe","jone"])
+        
+        var mockdata = [UserRelationship]()
+        for x in  1..<12 {
+            mockdata.append(UserRelationship(username: "jermae", name: "eee", type: x % 2 == 0 ? .not_following : .following))
+        }
+        let vc = ListViewController(data: mockdata)
         vc.title = "Follwers"
         vc.navigationItem.largeTitleDisplayMode = .never
         navigationController?.pushViewController(vc, animated: true)
     }
     
     func profileFollowingDidTapPostButton(_ header: ProfileInfoPhotoCollectionReusableView) {
-        let vc = ListViewController(data:  ["joe","jone"])
-        vc.title = "Follwing"
+        var mockdata = [UserRelationship]()
+        for x in  1..<12 {
+            mockdata.append(UserRelationship(username: "jermae", name: "eee", type:  x % 2 == 0 ? .following:.not_following))
+        }
+        let vc = ListViewController(data: mockdata)
+        vc.title = "Follwers"
         vc.navigationItem.largeTitleDisplayMode = .never
         navigationController?.pushViewController(vc, animated: true)
     }

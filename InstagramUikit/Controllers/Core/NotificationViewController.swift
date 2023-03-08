@@ -20,6 +20,7 @@ class NotificationViewController: UIViewController,UITableViewDelegate,UITableVi
        return tableView
     }()
     
+    private lazy var notificationView = NotificationView()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -27,15 +28,31 @@ class NotificationViewController: UIViewController,UITableViewDelegate,UITableVi
         view.backgroundColor  = .systemBlue
         tableview.delegate =  self
         tableview.dataSource = self
+        view.addSubview(tableview)
         
+        
+       // view.addSubview(notificationView)
+      //  view.addSubview(spinner)
+       // spinner.startAnimating()
 
         // Do any additional setup after loading the view.
     }
+    
+    private let spinner:UIActivityIndicatorView = {
+        let spinner = UIActivityIndicatorView(style: .large)
+        spinner.hidesWhenStopped = true
+        spinner.tintColor = .label
+       return spinner
+    }()
     
     override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
         
         tableview.frame = view.bounds
+        notificationView.frame = CGRect(x: 0, y: 0, width: Int(view.width)/2, height: Int(view.width)/2)
+        notificationView.center = view.center
+        spinner.frame = CGRect(x: 0, y: 0, width: Int(view.width)/2, height: Int(view.width)/2)
+        spinner.center = view.center
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {

@@ -7,9 +7,19 @@
 
 import UIKit
 
-class ListViewController: UIViewController {
+class ListViewController: UIViewController, UserTableViewCellDelegate {
+    func didTspFollowUnfollowButton(model: UserRelationship) {
+        switch model.type {
+            
+        case .following: break
+            //
+        case .not_following: break
+            //
+        }
+    }
+    
 
-    private let data:[String]
+    private let data: [UserRelationship]
     
     
     
@@ -19,7 +29,7 @@ class ListViewController: UIViewController {
         tableView.register( UserTableViewCell.self, forCellReuseIdentifier:  UserTableViewCell.identifier)
        return tableView
     }()
-    init(data:[String]) {
+    init(data:[UserRelationship]) {
         self.data = data
         super.init(nibName: nil, bundle: nil)
     }
@@ -51,7 +61,8 @@ extension ListViewController:UITableViewDelegate,UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableview.dequeueReusableCell(withIdentifier:  UserTableViewCell.identifier, for: indexPath) as? UserTableViewCell
-        cell?.textLabel?.text = data[indexPath.row]
+        cell?.delegatr = self
+        cell?.configure(with: data[indexPath.row])
         return cell!
     }
     
